@@ -61,4 +61,8 @@ public class Rectangulo {
 		this.x2 = x2;
 		this.y2 = y2;
 	}
+	
+	public String toString() {
+		return x1 + "," + y1 + "\n" + x2 + "," + y2;
+	}
 }
