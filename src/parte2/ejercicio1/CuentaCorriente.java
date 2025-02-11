@@ -69,4 +69,10 @@ public class CuentaCorriente {
 		
 		return incremented;
 	}
+	
+	public String toString() {
+		return "Información de la cuenta\n" +
+			"DNI: " + dni + "\n" +
+			"";
+	}
 }
