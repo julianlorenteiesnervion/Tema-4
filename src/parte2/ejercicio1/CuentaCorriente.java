@@ -12,7 +12,7 @@ public class CuentaCorriente {
     /**
      * Enum que representa las nacionalidades posibles de una cuenta.
      */
-    enum Nacionalidad {
+    private enum Nacionalidad {
         ESPAÑOLA, EXTRANJERA
     }
 
@@ -101,7 +101,7 @@ public class CuentaCorriente {
      * @param dinero La cantidad de dinero a ingresar, debe ser mayor a cero.
      * @return true si el ingreso fue exitoso, false si el monto es inválido.
      */
-    public boolean ingresarDiner(double dinero) {
+    public boolean ingresarDinero(double dinero) {
         boolean incremented = false;
 
         if (dinero > 0) {
@@ -121,6 +121,35 @@ public class CuentaCorriente {
     public String toString() {
         return "Información de la cuenta\n" +
             "DNI: " + dni + "\n" +
-            "Saldo: " + saldo + "\n";
+            "Saldo: " + saldo + " €";
+    }
+    
+    /**
+     * Devuelve un booleano en caso de que el DNI y el nombre de la cuenta sean iguales
+     * @return Booleano si los datos son iguales 
+     */
+    public boolean equals() {
+    	boolean same = false;
+    	
+    	if (dni.equals(dni) && nombre.equals(nombre))
+    		same = true;
+    	
+    	return same;
+    }
+    
+    /**
+     * Método get para obtener el saldo
+     * @return
+     */
+    public double getSaldo() {
+    	return saldo;
+    }
+    
+    /**
+     * Método set para dar un saldo
+     * @param ingreso
+     */
+    public void setSaldo(double ingreso) {
+    	saldo = ingreso;
     }
 }
