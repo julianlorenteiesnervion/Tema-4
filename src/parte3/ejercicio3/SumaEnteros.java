@@ -12,4 +12,29 @@ public class SumaEnteros {
 		
 		return suma;
 	}
+	
+	public int sumaEnteros(int num1, int num2) {
+		int suma;
+		
+		int max;
+		int min;
+		
+		if (num1 > num2) {
+			max = num1;
+			min = num2;
+		} else if (num2 > num1) {
+			max = num2;
+			min = num1;
+		} else {
+			suma = num1;
+		}
+		
+		if (max == min) {
+			suma = 0;
+		} else {
+			suma = num + sumaEnteros(num - 1);
+		}
+		
+		return suma;
+	}
 }
