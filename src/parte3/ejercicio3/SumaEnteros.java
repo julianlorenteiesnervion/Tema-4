@@ -26,14 +26,11 @@ public class SumaEnteros {
 			max = num2;
 			min = num1;
 		} else {
-			suma = num1;
+			max = num1;
+			min = num2;
 		}
 		
-		if (max == min) {
-			suma = 0;
-		} else {
-			suma = num + sumaEnteros(num - 1);
-		}
+		if (num1)
 		
 		return suma;
 	}

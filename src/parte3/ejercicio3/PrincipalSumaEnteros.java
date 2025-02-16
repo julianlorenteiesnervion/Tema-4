@@ -6,6 +6,8 @@ public class PrincipalSumaEnteros {
 		SumaEnteros suma1 = new SumaEnteros();
 		
 		System.out.println(suma1.sumaEnteros(5));
+		
+		System.out.println(suma1.sumaEnteros(44, 46));
 
 	}
 
