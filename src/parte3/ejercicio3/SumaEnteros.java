@@ -16,21 +16,13 @@ public class SumaEnteros {
 	public int sumaEnteros(int num1, int num2) {
 		int suma;
 		
-		int max;
-		int min;
-		
-		if (num1 > num2) {
-			max = num1;
-			min = num2;
-		} else if (num2 > num1) {
-			max = num2;
-			min = num1;
+		if (num1 == num2) {
+			suma = num1;
+		} else if (num1 < num2) {
+			suma = num1 + sumaEnteros(num1 + 1, num2);
 		} else {
-			max = num1;
-			min = num2;
+			suma = num2 + sumaEnteros(num2 + 1, num1);
 		}
-		
-		if (num1)
 		
 		return suma;
 	}
