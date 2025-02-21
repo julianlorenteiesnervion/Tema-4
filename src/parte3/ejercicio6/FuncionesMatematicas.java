@@ -14,8 +14,8 @@ public class FuncionesMatematicas {
 		return suma;
 	}
 	
-	public static double potencia(double num, int potencia) {
-		return Math.pow(num, potencia);
+	public static double potencia(double num, int exponente) {
+		return Math.pow(num, exponente);
 	}
 	
 }
