@@ -4,15 +4,58 @@ import java.util.*;
 
 public class Crud {
 	
-	public static void mostrarOpciones() {
-		System.out.println("ALUMNOS/AS\n"
-				+ "===================\n"
-				+ "1. Listado.\n"
-				+ "2. Nuevo Alumno.\n"
-				+ "3. Modificar.\n"
-				+ "4. Borrar.\n"
-				+ "5. Salir.");
+	static ArrayList<Alumno>Alumnos = new ArrayList<>();
+	
+	public static boolean create(String nombre, double media) {
+		Alumno alumno = new Alumno(nombre, media);
+		
+		Alumnos.add(alumno);
+		
+		return true;
 	}
 	
-	HashMap<Alumno, Alumno>Alumnos = new HashMap<>();
+	public static boolean read() {
+		boolean op = false;
+		
+		int i = 0;
+		
+		for (Alumno alumno : Alumnos) {
+			System.out.println(alumno.getNombre() + ": " + alumno.getMedia());
+			i++;
+		}
+		
+		if (i > 0) {
+			op = true;
+		}
+		
+		return op;
+	}
+	
+	public static boolean update(String nombre, double media) {
+		boolean op = false;
+		
+		for (Alumno alumno : Alumnos) {
+			if (alumno.getNombre().equals(nombre)) {
+				alumno.setMedia(media);
+				
+				op = true;
+			}
+		}
+		
+		return op;
+	}
+	
+	public static boolean remove(String nombre) {
+		boolean op = false;
+		
+		for (Alumno alumno : Alumnos) {
+			if (alumno.getNombre().equals(nombre)) {
+				Alumnos.remove(alumno);
+				
+				op = true;
+			}
+		}
+		
+		return op;
+	}
 }
