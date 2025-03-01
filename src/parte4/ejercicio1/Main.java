@@ -25,8 +25,6 @@ public class Main {
 		
 		Crud.read();
 		
-		Crud.remove("José");
-		
 		Crud.read();
 
 	}
