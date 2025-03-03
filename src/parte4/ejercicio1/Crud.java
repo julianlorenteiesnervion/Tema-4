@@ -45,8 +45,7 @@ public class Crud {
 		return op;
 	}
 	
-	// El remove no funciona por lo que vimos en clase
-	public static boolean remove(String nombre) {
+	public static boolean remove(String nombre) { // No funciona
 		boolean op = false;
 		
 		for (Alumno alumno : Alumnos) {
