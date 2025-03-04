@@ -25,8 +25,9 @@ public class Main {
 		
 		Crud.read();
 		
-		Crud.remove("Julián");
+		System.out.println(Crud.remove("Julián"));
 		
+		System.out.println("Lista después de eliminar");
 		Crud.read();
 
 	}

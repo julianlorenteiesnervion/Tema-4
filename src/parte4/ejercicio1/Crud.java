@@ -4,12 +4,12 @@ import java.util.*;
 
 public class Crud {
 	
-	static ArrayList<Alumno>Alumnos = new ArrayList<>();
+	static ArrayList<Alumno>alumnos = new ArrayList<>();
 	
 	public static boolean create(String nombre, double media) {
 		Alumno alumno = new Alumno(nombre, media);
 		
-		Alumnos.add(alumno);
+		alumnos.add(alumno);
 		
 		return true;
 	}
@@ -19,7 +19,7 @@ public class Crud {
 		
 		int i = 0;
 		
-		for (Alumno alumno : Alumnos) {
+		for (Alumno alumno : alumnos) {
 			System.out.println(alumno.getNombre() + ": " + alumno.getMedia());
 			i++;
 		}
@@ -34,7 +34,7 @@ public class Crud {
 	public static boolean update(String nombre, double media) {
 		boolean op = false;
 		
-		for (Alumno alumno : Alumnos) {
+		for (Alumno alumno : alumnos) {
 			if (alumno.getNombre().equals(nombre)) {
 				alumno.setMedia(media);
 				
@@ -45,15 +45,13 @@ public class Crud {
 		return op;
 	}
 	
-	public static boolean remove(String nombre) { // No funciona
+	public static boolean remove(String nombre) {
 		boolean op = false;
 		
-		for (Alumno alumno : Alumnos) {
-			if (alumno.getNombre().equals(nombre)) {
-				Alumnos.remove(alumno);
-				
-				op = true;
-			}
+		Alumno alumno = new Alumno(nombre);
+		
+		if (alumnos.remove(alumno)) {
+			op = true;
 		}
 		
 		return op;
