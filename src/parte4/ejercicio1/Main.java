@@ -1,5 +1,7 @@
 package parte4.ejercicio1;
 
+import java.util.*;
+
 public class Main {
 	
 	static void mostrarOpciones() {
@@ -11,25 +13,19 @@ public class Main {
 				+ "4. Borrar.\n"
 				+ "5. Salir.");
 	}
+	
+	static boolean checkOpcion(int num) {
+		boolean res = false;
+		
+		if (num)
+	}
 
 	public static void main(String[] args) {
-		
-		Crud.create("Julián", 10);
-		Crud.create("Samuel", 7);
-		Crud.create("Pablo", 8);
-		Crud.create("José", 7);
-		
-		Crud.read();
-		
-		Crud.update("Julián", 9);
-		
-		Crud.read();
-		
-		System.out.println(Crud.remove("Julián"));
-		
-		System.out.println("Lista después de eliminar");
-		Crud.read();
+		Scanner reader = new Scanner(System.in);
 
+		int opcion;
+		
+		
 	}
 
 }
