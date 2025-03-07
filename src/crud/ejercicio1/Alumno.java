@@ -1,4 +1,4 @@
-package parte4.ejercicio1;
+package crud.ejercicio1;
 
 import java.util.Objects;
 
