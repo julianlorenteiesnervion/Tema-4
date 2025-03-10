@@ -139,6 +139,7 @@ public class Articulo {
     public String toString() {
         return "Artículo: " + nombre + "\n"
                 + "Precio: " + precio + "\n"
+                + "Stock: " + cuantosQuedan + "\n"
                 + "IVA: " + iva + "\n"
                 + "PVP: " + getPVP() + "\n";
     }

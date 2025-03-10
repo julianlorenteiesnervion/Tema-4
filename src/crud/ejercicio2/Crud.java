@@ -67,4 +67,32 @@ public class Crud {
 		
 		return op;
 	}
+	
+	public static boolean newMercancia(String nombre, int cuantosQuedan) {
+		boolean op = false;
+		
+		for (Articulo articulo : listaArticulos) {
+			if (articulo.getNombre().equalsIgnoreCase(nombre) && cuantosQuedan > 0) {
+				articulo.setCuantosQuedan(articulo.getCuantosQuedan() + cuantosQuedan);
+				
+				op = true;
+			}
+		}
+		
+		return op;
+	}
+	
+	public static boolean removeMercancia(String nombre, int cuantosQuedan) {
+		boolean op = false;
+		
+		for (Articulo articulo : listaArticulos) {
+			if (articulo.getNombre().equalsIgnoreCase(nombre) && (articulo.getCuantosQuedan() - cuantosQuedan) >= 0 && cuantosQuedan > 0) {
+				articulo.setCuantosQuedan(articulo.getCuantosQuedan() - cuantosQuedan);
+				
+				op = true;
+			}
+		}
+		
+		return op;
+	}
 }
