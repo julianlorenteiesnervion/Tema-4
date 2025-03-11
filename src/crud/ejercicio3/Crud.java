@@ -2,6 +2,8 @@ package crud.ejercicio3;
 
 import java.util.*;
 
+import crud.ejercicio3.Pizza.Estado;
+
 public class Crud {
 
 	static ArrayList<Pizza>listaPizzas = new ArrayList<>();
@@ -43,7 +45,7 @@ public class Crud {
 		boolean op = false;
 		
 		for (Pizza pizza : listaPizzas) {
-			if (pizza.getCodigo() == codigo) {
+			if (pizza.getCodigo() == codigo && pizza.getEstado().equals(Estado.PEDIDA)) {
 				pizza.setEstado("SERVIDA");
 				
 				op = true;

@@ -35,12 +35,8 @@ public class Main {
 		do {
 			System.out.print("a. Listado\nb. Alta\nc. Baja\nd. Modificación\ne. Entrada de mercancía\n"
 					+ "f. Salida de mercancía\ng. Salir\nIntroduzca la opción: ");
-<<<<<<< HEAD
+			
 			entrada = reader.nextLine();
-=======
-			entrada = reader.next();
-			reader.nextLine();
->>>>>>> branch 'master' of https://github.com/julianlorenteiesnervion/Tema-4.git
 			
 			switch (entrada.toLowerCase()) {
 			case "a" -> { // Listado
