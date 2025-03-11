@@ -18,7 +18,7 @@ public class Main {
 	}
 	
 	static int askCuantosQuedan() {
-		System.out.println("Introduce cuántos quedan: ");
+		System.out.print("Introduce el stock: ");
 		int cuantosQuedan = reader.nextInt();
 		reader.nextLine();
 		return cuantosQuedan;
@@ -35,15 +35,20 @@ public class Main {
 		do {
 			System.out.print("a. Listado\nb. Alta\nc. Baja\nd. Modificación\ne. Entrada de mercancía\n"
 					+ "f. Salida de mercancía\ng. Salir\nIntroduzca la opción: ");
+<<<<<<< HEAD
 			entrada = reader.nextLine();
+=======
+			entrada = reader.next();
+			reader.nextLine();
+>>>>>>> branch 'master' of https://github.com/julianlorenteiesnervion/Tema-4.git
 			
 			switch (entrada.toLowerCase()) {
-			case "a" -> {
+			case "a" -> { // Listado
 				if (!Crud.read()) {
 					System.out.println("No hay artículos en la lista.");
 				}
 			}
-			case "b" -> {
+			case "b" -> { // Alta
 				nombre = askNombre();
 				precio = askPrecio();
 				cuantosQuedan = askCuantosQuedan();
@@ -52,7 +57,7 @@ public class Main {
 					System.out.println("El artículo se ha dado de alta correctamente.");
 				}
 			}
-			case "c" -> {
+			case "c" -> { // Baja
 				nombre = askNombre();
 				
 				if (Crud.delete(nombre)) {
@@ -61,6 +66,40 @@ public class Main {
 					System.out.println("El artículo no existe.");
 				}
 				
+			}
+			case "d" -> { // Modificación
+				nombre = askNombre();
+				precio = askPrecio();
+				cuantosQuedan = askCuantosQuedan();
+				
+				if (Crud.update(nombre, precio, cuantosQuedan)) {
+					System.out.println("El artículo se ha actualizado correctamente.");
+				} else {
+					System.out.println("Ha ocurrido un problema con la modificación.");
+				}
+			}
+			case "e" -> { // Entrada de mercancía
+				nombre = askNombre();
+				cuantosQuedan = askCuantosQuedan();
+				
+				if (Crud.newMercancia(nombre, cuantosQuedan)) {
+					System.out.println("La mercancía se ha añadido correctamente.");
+				} else {
+					System.out.println("El artículo no existe o ha introducido una cantidad de mercancía incorrecta."); // ¿Puedo devolver enteros en vez de booleans para así dar un mensaje de error más específico con un switch?
+				}
+			}
+			case "f" -> { // Salida de mercancía
+				nombre = askNombre();
+				cuantosQuedan = askCuantosQuedan();
+				
+				if (Crud.removeMercancia(nombre, cuantosQuedan)) {
+					System.out.println("La mercancía se ha retirado correctamente.");
+				} else {
+					System.out.println("El artículo no existe o ha introducido una cantidad de mercancía incorrecta."); // ¿Puedo devolver enteros en vez de booleans para así dar un mensaje de error más específico con un switch?
+				}
+			}
+			case "g" -> { // Salir
+				System.out.println("Saliendo del programa...");
 			}
 			default -> {
 				System.out.println("No ha introducido una opción correcta.");
