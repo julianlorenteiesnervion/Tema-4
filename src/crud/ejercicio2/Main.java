@@ -35,7 +35,7 @@ public class Main {
 		do {
 			System.out.print("a. Listado\nb. Alta\nc. Baja\nd. Modificación\ne. Entrada de mercancía\n"
 					+ "f. Salida de mercancía\ng. Salir\nIntroduzca la opción: ");
-			entrada = reader.next();
+			entrada = reader.nextLine();
 			
 			switch (entrada.toLowerCase()) {
 			case "a" -> {
