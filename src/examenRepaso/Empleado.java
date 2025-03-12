@@ -29,20 +29,6 @@ public class Empleado {
 	}
 
 	/**
-	 * @return Devuelve el sueldo base
-	 */
-	public int getSueldoBase() {
-		return sueldoBase;
-	}
-
-	/**
-	 * @param sueldoBase Setter del sueldo base
-	 */
-	public void setSueldoBase(int sueldoBase) {
-		this.sueldoBase = sueldoBase;
-	}
-
-	/**
 	 * @return Devuelve las horas extra
 	 */
 	public int getHorasExtra() {
@@ -111,7 +97,7 @@ public class Empleado {
 	@Override
 	public boolean equals(Object obj) {
 		Empleado other = (Empleado) obj;
-		return Objects.equals(dni, other.dni);
+		return other.dni.equals(this.dni);
 	}
 
 }

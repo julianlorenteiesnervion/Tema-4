@@ -7,25 +7,7 @@ public class ListadoEmpleados {
 	private static HashSet<Empleado>listaEmpleados = new HashSet<>();
 	
 	public static boolean create(Empleado empleado) {
-		boolean op = false;
-		
-		if (!exists(empleado) && listaEmpleados.add(empleado)) {
-			op = true;
-		}
-		
-		return op;
-	}
-	
-	public static boolean exists(Empleado empleado) {
-		boolean op = false;
-		
-		for (Empleado empleado2 : listaEmpleados) {
-			if (empleado.equals(empleado2)) {
-				op = true;
-			}
-		}
-		
-		return op;
+		return listaEmpleados.add(empleado);
 	}
 	
 	public static boolean read() {

@@ -38,7 +38,7 @@ public class Principal {
 	
 	public static void main(String[] args) {
 		
-		Empleado empleado;
+		Empleado empleado = null;
 		int opcion;
 		String dni;
 		String nombre;
