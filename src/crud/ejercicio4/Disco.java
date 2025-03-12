@@ -1,5 +1,7 @@
 package crud.ejercicio4;
 
+import java.util.Objects;
+
 public class Disco {
 	private final int codigo;
 	private String autor;
@@ -76,6 +78,11 @@ public class Disco {
 	 */
 	public int getCodigo() {
 		return codigo;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(codigo);
 	}
 
 	@Override

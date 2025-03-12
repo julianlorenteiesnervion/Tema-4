@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Crud {
 	
-	private static ArrayList<Disco>listaDiscos = new ArrayList<>();
+	private static HashSet<Disco>listaDiscos = new HashSet<>();
 	
 	public static boolean create(int codigo, String autor, String titulo, int duracion, String genero) {
 		boolean op = false;
