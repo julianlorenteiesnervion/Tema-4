@@ -26,16 +26,17 @@ public class Pizza {
 	public Pizza(int codigo, String tamano, String tipo) {
 		this.codigo = codigo;
 		
-		switch (tamano.toUpperCase()) {
-		case "MEDIANA" -> this.tamano = Tamano.MEDIANA;
-		case "FAMILIAR" -> this.tamano = Tamano.FAMILIAR;
+		switch (tamano) {
+		case "MEDIANA", "FAMILIAR" -> {
+			this.tamano = Tamano.valueOf(tamano.toUpperCase());
+		}
 		default -> this.tamano = Tamano.MEDIANA;
 		}
 		
-		switch (tipo.toUpperCase()) {
-		case "MARGARITA" -> this.tipo = Tipo.MARGARITA;
-		case "CUATROQUESOS" -> this.tipo = Tipo.CUATROQUESOS;
-		case "FUNGHI" -> this.tipo = Tipo.FUNGHI;
+		switch (tipo) {
+		case "MARGARITA", "CUATROQUESOS", "FUNGHI" -> {
+			this.tipo = Tipo.valueOf(tipo.toUpperCase());
+		}
 		default -> this.tipo = Tipo.MARGARITA;
 		}
 		
